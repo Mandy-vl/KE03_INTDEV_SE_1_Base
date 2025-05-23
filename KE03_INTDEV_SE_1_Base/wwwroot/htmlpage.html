@@ -18,45 +18,37 @@
     <hr />
     <h2>Alle producten</h2>
     <table>
-        <tr>
+        <thead>
             <th>Artikel</th>
-            <th>Artikelnummer</th>
-            <th>Artikel categorie</th>
-            <th>Artikelnaam</th>
+            <th>Productnummer</th>
+            <th>Productnaam</th>
             <th>Omschrijving</th>
-            <th>Materiaal</th>
-            <th>Afmetingen</th>
             <th>Kleur</th>
-            <th>Aantal</th>
-            <th>Prijs per stuk</th>
-            <th>Totaalprijs</th>
-        </tr>
-        <tr>
-            <td>Foto 1</td>
-            <td>20250001</td>
-            <td>Moeren</td>
-            <td>Zeskantmoer</td>
-            <td>Standaard moer met zes zijden</td>
-            <td>Roestvrijstaal</td>
-            <td>Breedte:2cm, Lengte:2cm, Hoogte:1cm</td>
-            <td>Grijs</td>
-            <td>1</td>
-            <td>€1,50</td>
-            <td>€1,50</td>
-        </tr>
-        <tr>
-            <td>Foto 2</td>
-            <td>20240125</td>
-            <td>Moeren</td>
-            <td>T-moer</td>
-            <td>Past in T-sleuven, geschikt voor onder andere werkbanken of freesmachines.</td>
-            <td>Roestvrijstaal</td>
-            <td>Breedte:2cm, Lengte:3cm, Hoogte:2cm</td>
-            <td>Zwart</td>
-            <td>5</td>
-            <td>€1,50</td>
-            <td>€7,50</td>
-        </tr>
+            <th>PrijsPerStuk</th>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.Products)
+            {
+            <tr>
+                <td>
+                    <img src=" @product.ImageUrl" alt="@product.Productnaam" width="100" />
+                </td>
+                <td>@product.ImageUrl</td>
+                <td>@product.Productnummer</td>
+                <td>@product.Productnaam</td>
+                <td>@product.Omschrijving</td>
+                <td>@product.Kleur</td>
+                <td>@product.PrijsPerStuk</td>
+                <td>
+                    <form method="post" asp-page-handler="VoegToeAanWinkelwagen" asp-route-productId="@product.Productnummer">
+                        <button type="submit" class="btn btn-outline-dark">
+                            <i class="bi bi-cart-plus"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            }
+        </tbody>
     </table>
 </body>
 
