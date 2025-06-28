@@ -15,15 +15,15 @@
             <th>Omschrijving</th>
             <th>Kleur</th>
             <th>PrijsPerStuk</th>
+            <th>Actie</th>
             </thead>
             <tbody>
                 @foreach (var product in Model.Products)
                 {
                     <tr>
                         <td>
-                            <img src=" @product.ImageUrl" alt="@product.Productnaam" width="100" />
+                            <img src="@product.ImageUrl" alt="@product.Productnaam" width="100" />
                         </td>
-                        <td>@product.ImageUrl</td>
                         <td>@product.Productnummer</td>
                         <td>@product.Productnaam</td>
                         <td>@product.Omschrijving</td>
@@ -40,7 +40,6 @@
                 }
             </tbody>
         </table>
-
 <style>
 
     table {

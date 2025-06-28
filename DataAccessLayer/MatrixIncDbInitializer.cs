@@ -32,8 +32,8 @@ namespace DataAccessLayer
 
             var products = new Product[]
             {
-                new Product { ImageUrl = "foto1.jpg", Productnummer = 20250001, Productnaam = "Zeskantmoer", Omschrijving = "Standaard moer met zes zijden", Kleur = "Grijs", PrijsPerStuk = 1.50m },
-                new Product { ImageUrl = "foto2.jpg", Productnummer = 20240125, Productnaam = "T-moer", Omschrijving = "Past in T-sleuven, geschikt voor onder andere werkbanken of freesmachines.", Kleur = "Zwart", PrijsPerStuk = 1.50m }
+                new Product { ImageUrl ="/images/Foto_Zeskantmoer.png", Productnummer = 20250001, Productnaam = "Zeskantmoer", Omschrijving = "Standaard moer met zes zijden", Kleur = "Grijs", PrijsPerStuk = 1.50m },
+                new Product { ImageUrl ="/images/Foto_TMoer.png", Productnummer = 20240125, Productnaam = "T-moer", Omschrijving = "Past in T-sleuven, geschikt voor onder andere werkbanken of freesmachines.", Kleur = "Zwart", PrijsPerStuk = 1.50m }
             };
             context.Products.AddRange(products);
 

@@ -16,7 +16,7 @@ namespace DataAccessLayer.Models
 
         public string Productnaam { get; set; }
 
-        public string Omschrijving {  get; set; }
+        public string Omschrijving { get; set; }
 
         public string Kleur {  get; set; }
 
