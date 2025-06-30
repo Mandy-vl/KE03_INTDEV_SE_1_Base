@@ -1,0 +1,41 @@
+﻿@page
+@model KE03_INTDEV_SE_1_Base.Pages.Shoppingcart.Index1Model
+@{
+    ViewData["Title"] = "Winkelwagen";
+}
+
+<h1>Matrix Inc <br /> Webshop</h1>
+<hr />
+<h2>Winkelwagen</h2>
+@if (Model.ShoppingCartItems != null && Model.ShoppingCartItems.Any())
+{
+    <table>
+        <thead>
+            <th>Artikel</th>
+            <th>Productnummer</th>
+            <th>Productnaam</th>
+            <th>Omschrijving</th>
+            <th>Kleur</th>
+            <th>PrijsPerStuk</th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ShoppingCartItems)
+            {
+                <tr>
+                    <td>
+                        <img src="@item.ImageUrl" alt="@item.Productnaam" width="100" />
+                    </td>
+                    <td>@item.Productnummer</td>
+                    <td>@item.Productnaam</td>
+                    <td>@item.Omschrijving</td>
+                    <td>@item.Kleur</td>
+                    <td>@item.PrijsPerStuk</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Uw winkelwagen is leeg.</p>
+}
