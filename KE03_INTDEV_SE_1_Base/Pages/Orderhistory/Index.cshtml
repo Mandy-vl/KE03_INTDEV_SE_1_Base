@@ -3,18 +3,38 @@
 @{
     ViewData["Title"] = "Bestelgeschiedenis";
 }
+<h1>Bestelgeschiedenis</h1>
+
+@if (Model.Orders.Count == 0)
+{
+    <p>U heeft nog geen bestellingen geplaatst.</p>
+}
+
+else
+{
+    <p>Hieronder vindt u een overzicht van uw bestellingen:</p>
+}
 <table class="table">
     <thead>
         <tr>
-            <th>Klant</th>
-            <th>Aantal Orders</th>
+            <th>Ordernummer</th>
+            <th>Besteldatum</th>
+            <th>Producten</th>
         </tr>
     </thead>
-    @foreach (var c in Model.Customers)
+    <tbody>
+    @foreach (var o in Model.Orders)
     {
         <tr>
-            <td>@Html.DisplayName(c.Name)</td>
-            <td>@Html.DisplayName(c.Orders.Count.ToString())</td>
+            <td>@o.Id</td>
+            <td>@o.OrderDate.ToShortDateString()</td>
+            <td>
+                @foreach (var p in o.Products)
+                {
+                    <div>@p.Productnaam</div>
+                }
+            </td>
         </tr>
-    }
+     }
+	</tbody>
 </table>

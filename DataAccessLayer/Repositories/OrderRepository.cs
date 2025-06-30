@@ -18,6 +18,14 @@ namespace DataAccessLayer.Repositories
             _context = context;
         }
 
+        public IEnumerable<Order> GetAllOrdersWithDetails()
+        {
+            return _context.Orders
+                           .Include(o => o.Customer)
+                           .Include(o => o.Products)
+                           .ToList();
+        }
+
         public void AddOrder(Order order)
         {
             _context.Orders.Add(order);
