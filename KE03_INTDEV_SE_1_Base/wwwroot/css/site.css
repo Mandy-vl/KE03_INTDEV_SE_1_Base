@@ -20,3 +20,14 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.bestellen-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}

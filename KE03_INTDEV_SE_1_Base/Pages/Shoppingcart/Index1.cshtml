@@ -34,6 +34,31 @@
             }
         </tbody>
     </table>
+
+    @if (Model.ShoppingCartItems != null && Model.ShoppingCartItems.Any())
+    {
+        //Bestelknop
+        <button class="btn btn-success" onclick="toonBevestiging()">Bestellen</button>
+
+        //Bootstrap modal structuur
+        <div id="bevestigPopup" class="d-none position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-dark bg-opacity-50">
+            <div class="bg-white p-4 rounded text-center">
+                <p>Weet je zeker dat je wilt bestellen?</p>
+                <button class="btn btn-secondary me-2" onclick="sluitPopup()">Annuleren</button>
+                <a href="/Orderhistory" class="btn btn-success">Afronden</a>
+            </div>
+        </div>
+
+        //Bootstrap modal inhoud
+        <script>
+            function toonBevestiging() {
+                document.getElementById('bevestigPopup').classList.remove('d-none');
+            }
+            function sluitPopup() {
+                document.getElementById('bevestigPopup').classList.add('d-none');
+            }
+        </script>
+    }
 }
 else
 {
